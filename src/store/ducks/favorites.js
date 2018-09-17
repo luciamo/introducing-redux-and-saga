@@ -1,3 +1,6 @@
+/* 
+ * REDUCER
+ */
 const INITIAL_STATE = {
   loading: false,
   data: [],
@@ -27,3 +30,23 @@ export default function favorites(state = INITIAL_STATE, action) {
       return state;
   }
 }
+
+/* 
+ * ACTIONS
+*/
+export const Creators = {
+  addFavoriteRequest: repository => ({
+    type: 'ADD_FAVORITE_REQUEST',
+    payload: { repository },
+  }),
+  
+  addFavoriteSuccess: data => ({
+    type: 'ADD_FAVORITE_SUCCESS',
+    payload: { data },
+  }),
+  
+  addFavoriteFailure: error => ({
+    type: 'ADD_FAVORITE_FAILURE',
+    payload: { error },
+  }),
+};
